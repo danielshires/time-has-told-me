@@ -1,0 +1,11 @@
+//   Keyframes
+
+@keyframes myName {
+    from {
+        transform: translate(0%, 0%);
+    }
+
+    to {
+        transform: translate(0%, -100%);
+    }
+}

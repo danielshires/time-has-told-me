@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html>
+{{ partial "head.html" . }}
+
+<body>
+     {{ partial "header" (dict "Kind" .Kind "Template" "List") }}
+     {{ block "main" . -}}{{- end }}
+     {{ partial "footer" . }}
+     {{ partial "scripts" . }}
+</body>
+
+</html>

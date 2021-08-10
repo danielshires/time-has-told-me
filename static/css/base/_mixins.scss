@@ -1,0 +1,131 @@
+/* Define the mixin */
+@mixin fluid-typography($minFont, $maxFont, $minBreakpoint, $maxBreakpoint) {
+
+  /* Define variable for media query */
+  $maxLessOne: $maxBreakpoint - 1;
+
+  /* Define variable for fallback */
+  $avg: ($maxFont + $minFont) / 2;
+
+  /* Base font size */
+  font-size: #{$minFont}px;
+
+  @media (min-width: #{$minBreakpoint}px) and (max-width: #{$maxLessOne}px) {
+
+    /* Adds a fallback for unsupported browsers */
+    font-size: #{$avg}px;
+
+    /* The fluid typography magic 🌟  */
+    font-size: calc(#{$minFont}px + (#{$maxFont} - #{$minFont}) * (100vw - #{$minBreakpoint}px) / (#{$maxBreakpoint} - #{$minBreakpoint}))
+  }
+
+  @media (min-width: #{$maxBreakpoint}px) {
+    font-size: #{$maxFont}px;
+  }
+}
+
+// Odd
+
+@mixin show-me {
+  border: 1px solid black;
+}
+
+// Variables
+// --------------------
+
+//== Global colors for use
+
+$primary-color:     #000000 !default;
+$white-color:       #ffffff !default;
+$light-grey-color:  #f5f5f5 !default;
+$grey-color:        #adb0b1 !default;
+$dark-grey-color:   #4c4c4c !default;
+$yellow-color:      #ffc01a !default;
+$blue-color:        #0d4add !default;
+$ice-blue-color:    #eff0f1 !default;
+$dark-blue-color:   #024582 !default;
+
+//== Font size
+$font-size-base:      14px !default;
+$font-h1:             42px !default;
+$font-h2-mobile:      32px !default;
+$font-h2-desktop:     42px !default;
+$font-h3:             24px !default;
+$font-h4:             51px !default;
+$font-h5:             20px !default;
+$font-h6:             10px !default;
+$font-size-button:    16px !default;
+$font-size-small:     12px !default;
+$paragraph:           16px !default;
+$font-10:             10px !default;
+
+//== line-height
+$line-height-base:  1; 
+
+//== Resolutions
+$xl: 1450px;
+$lg: 1025px;
+$md: 992px;
+$sm: 768px;
+$xs: 400px;
+
+$minHeight800  : 800px;
+$minHeight1500 : 1500px;
+$maxHeight900  : 900px;
+$maxHeight1300 : 1300px;
+$maxHeight1600 : 1600px;
+
+
+//== BREAKPOINTS
+@mixin xs {
+	@media (min-width: #{$xs}) {
+        @content;
+    }
+}
+@mixin sm {
+	@media (min-width: #{$sm}) {
+        @content;
+    }
+}
+@mixin md {
+    @media (min-width: #{$md}) {
+        @content;
+    }
+}
+@mixin lg {
+    @media (min-width: #{$lg}) {
+        @content;
+    }
+}
+@mixin xl {
+    @media (min-width: #{$xl}) {
+        @content;
+    }
+}
+
+
+@mixin minHeight800 {
+    @media screen and  (min-height: #{$minHeight800}) {
+        @content;
+    }
+}
+@mixin minHeight1500 {
+    @media (min-height: #{$minHeight1500}) {
+        @content;
+    }
+}
+@mixin maxHeight900 {
+    @media (min-height: #{$maxHeight900}) {
+        @content;
+    }
+}
+@mixin maxHeight1300 {
+    @media (min-height: #{$maxHeight1300}) {
+        @content;
+    }
+}
+@mixin maxHeight1600 {
+    @media (min-height: #{$maxHeight1600}) {
+        @content;
+    }
+}
