@@ -1,16 +1,14 @@
 // Fonts
 @import "base/typeface";
 
-// Reset & Normalize
-@import "base/normalize";
-@import "base/reset";
-
 // Variables and Mixins
 @import "base/mixins";
-@import "base/variables";
 
-// Headings
-@import "base/headings";
+// Reset
+@import "base/reset";
+
+// Page
+@import "base/structure";
 
 // Animation
 @import "base/animation";

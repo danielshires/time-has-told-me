@@ -1,0 +1,65 @@
+/* Scaffolding */
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.75;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+// Structure
+
+section.hero {
+    background-image: url(/images/hero/nick-drake-hero.jpg);
+    background-color: $color-green-velvet;
+    background-position: top right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 150vh;
+}
+
+section .hero_heading {
+
+    h1 {
+        @include heading-font;
+        font-size: 7rem;
+        line-height: 70%;
+        color: $color-peach-cream;
+
+        .align-left {
+            text-align: left;
+            padding-right: 4rem;
+        }
+
+        .align-right {
+            text-align: right;
+            padding-left: 4rem;
+        }
+    }
+
+    h2 {
+        @include display-font;
+        color: $color-gold;
+        font-size: 40px;
+        line-height: 170%;
+        font-weight: 400;
+        font-style: italic;
+    }
+}

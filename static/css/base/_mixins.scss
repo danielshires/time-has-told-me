@@ -1,49 +1,15 @@
-/* Define the mixin */
-@mixin fluid-typography($minFont, $maxFont, $minBreakpoint, $maxBreakpoint) {
-
-  /* Define variable for media query */
-  $maxLessOne: $maxBreakpoint - 1;
-
-  /* Define variable for fallback */
-  $avg: ($maxFont + $minFont) / 2;
-
-  /* Base font size */
-  font-size: #{$minFont}px;
-
-  @media (min-width: #{$minBreakpoint}px) and (max-width: #{$maxLessOne}px) {
-
-    /* Adds a fallback for unsupported browsers */
-    font-size: #{$avg}px;
-
-    /* The fluid typography magic 🌟  */
-    font-size: calc(#{$minFont}px + (#{$maxFont} - #{$minFont}) * (100vw - #{$minBreakpoint}px) / (#{$maxBreakpoint} - #{$minBreakpoint}))
-  }
-
-  @media (min-width: #{$maxBreakpoint}px) {
-    font-size: #{$maxFont}px;
-  }
-}
-
-// Odd
-
-@mixin show-me {
-  border: 1px solid black;
-}
-
 // Variables
 // --------------------
 
 //== Global colors for use
 
-$primary-color:     #000000 !default;
-$white-color:       #ffffff !default;
-$light-grey-color:  #f5f5f5 !default;
-$grey-color:        #adb0b1 !default;
-$dark-grey-color:   #4c4c4c !default;
-$yellow-color:      #ffc01a !default;
-$blue-color:        #0d4add !default;
-$ice-blue-color:    #eff0f1 !default;
-$dark-blue-color:   #024582 !default;
+$color-black:               #000000 !default;
+$color-white:               #ffffff !default;
+$color-peach-cream:         #FFF4ED !default;
+$color-green-velvet:        #07260B !default;
+$color-gold:                #B28A3D!default;
+$color-red-punch:           #BD311C!default;
+
 
 //== Font size
 $font-size-base:      14px !default;
@@ -63,11 +29,10 @@ $font-10:             10px !default;
 $line-height-base:  1; 
 
 //== Resolutions
-$xl: 1450px;
-$lg: 1025px;
-$md: 992px;
-$sm: 768px;
-$xs: 400px;
+$desktop: 1440px;
+$laptop: 1024px;
+$tablet: 768px;
+$phone: 320px;
 
 $minHeight800  : 800px;
 $minHeight1500 : 1500px;
@@ -77,28 +42,23 @@ $maxHeight1600 : 1600px;
 
 
 //== BREAKPOINTS
-@mixin xs {
-	@media (min-width: #{$xs}) {
+@mixin phone {
+	@media (min-width: #{$phone}) {
         @content;
     }
 }
-@mixin sm {
-	@media (min-width: #{$sm}) {
+@mixin tablet {
+	@media (min-width: #{$tablet}) {
         @content;
     }
 }
-@mixin md {
-    @media (min-width: #{$md}) {
+@mixin laptop {
+    @media (min-width: #{$laptop}) {
         @content;
     }
 }
-@mixin lg {
-    @media (min-width: #{$lg}) {
-        @content;
-    }
-}
-@mixin xl {
-    @media (min-width: #{$xl}) {
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
         @content;
     }
 }
@@ -129,3 +89,65 @@ $maxHeight1600 : 1600px;
         @content;
     }
 }
+
+// Animation Settings
+$transition-duration: .3s;
+// $transition-timing: $ease-in-out-quad;
+
+
+// Z-Index Management
+$elements: content,
+section-header,
+header,
+theme-song,
+modal;
+
+
+// Line height
+$base-line-height: 1.5;
+$header-line-height: 1.25;
+
+
+// Font Sizes
+$base-font-size: ms(1);
+
+
+// Other Sizes
+$base-border-radius: .2em;
+$base-spacing: $base-line-height * 1em;
+$outer-margin: 1.5rem;
+
+
+
+
+// Background Color
+$base-background-color: $color-white;
+
+
+// Font Colors
+$base-font-color: $color-peach-cream;
+$reverse-font-color: $color-green-velvet;
+
+// Accent Colors
+$base-accent-color: $color-gold;
+$secondary-accent-color: $color-red-punch;
+$tertiary-accent-color: $color-green-velvet;
+
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-link-color, 10%);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+
+
+// Borders
+$base-border-color: $base-accent-color;
+$base-border: 1px solid $base-border-color;
+
+
+// Box Shadow
+$base-box-shadow: 0 10px 20px rgba(black, 0.3);
+
+// Gradients
+$base-linear-gradient: linear-gradient($base-font-color, transparent);

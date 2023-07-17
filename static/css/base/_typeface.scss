@@ -1,8 +1,75 @@
 @font-face {
-     font-family: 'PX-Grotesk';
-     src: url("/") format("woff2"),
-          url("/") format("woff"),
-          url("/") format("truetype");
-          font-weight: 400;
-          font-style: normal;
+    font-family: 'Bon Vivant Family Serif';
+    src: url('../../fonts/bon-viviant/BonVivantSerif.eot');
+    src: local('Bon Vivant Family Serif'), local('BonVivantSerif'),
+        url('../../fonts/bon-viviant/BonViviantSerif.eot#iefix') format('embedded-opentype'),
+        url('../../fonts/bon-viviant/BonVivantSerif.woff2') format('woff2'),
+        url('../../fonts/bon-viviant/BonVivantSerif.woff') format('woff'),
+        url('../../fonts/bon-viviant/BonVivantSerif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bon Vivant Family Serif';
+    src: url('../../fonts/bon-viviant/BonVivantSerifBold.eot');
+    src: local('Bon Vivant Family Serif Bold'), local('BonVivantSerifBold'),
+        url('../../fonts/bon-viviant/BonVivantSerifBold.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/bon-viviant/BonVivantSerifBold.woff2') format('woff2'),
+        url('../../fonts/bon-viviant/BonVivantSerifBold.woff') format('woff'),
+        url('../../fonts/bon-viviant/BonVivantSerifBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bon Vivant Family Script';
+    src: url('../../fonts/bon-viviant/BonVivant-Regular.eot');
+    src: local('Bon Vivant Family Script'), local('BonVivant-Regular'),
+        url('../../fonts/bon-viviant/BonVivant-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/bon-viviant/BonVivant-Regular.woff2') format('woff2'),
+        url('../../fonts/bon-viviant/BonVivant-Regular.woff') format('woff'),
+        url('../../fonts/bon-viviant/BonVivant-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITC Clearface';
+    src: url('../../fonts/itc-clearface/ClearfaceStd-Regular.otf') format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITC Clearface';
+    src: url('../../fonts/itc-clearface/ClearfaceStd-Heavy.otf') format("opentype");
+    font-weight: bolder;
+    font-style: normal;
+}
+
+
+
+@mixin heading-font {
+    font-family: 'Bon Vivant Family Serif', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+@mixin display-font {
+    font-family: 'Bon Vivant Family Script', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    font-style: italic;
+}
+
+@mixin subHeading-font {
+    font-family: 'ITC Clearface', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin body-font {
+    font-weight: normal;
+    font-style: normal;
 }
